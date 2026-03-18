@@ -154,7 +154,6 @@ Example output:
 
 ---
 <table> <tr> <th style="text-align:center; font-size:16px;">Positive (Canine Problem)</th> <th style="text-align:center; font-size:16px;">Negative (Normal)</th> </tr> <tr> <td align="center" style="padding: 10px;"> <img src="https://github.com/user-attachments/assets/1389222f-5510-4752-bf2c-52105f67723e" width="320"/><br/><br/> <b>IMG_5152.jpeg</b><br/> <code>Score: 0.0821</code><br/> <span style="color:green;"><b>POSITIVE</b></span><br/> <sub>Well inside hypersphere</sub> </td> <td align="center" style="padding: 10px;"> <img src="https://github.com/user-attachments/assets/b9c5de92-c612-41c4-94eb-64e5830e0380" width="320"/><br/><br/> <b>ren.jpeg</b><br/> <code>Score: 0.1345</code><br/> <span style="color:red;"><b>NEGATIVE</b></span><br/> <sub>Outside hypersphere</sub> </td> </tr> </table> <p align="center"> <i>Figure: Deep SVDD-based classification of OPG images. Lower scores indicate embeddings closer to the learned hypersphere center.</i> </p>
----
 
 ## Design Decisions for Low-Data Regimes
 
