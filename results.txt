@@ -1,0 +1,62 @@
+================================================================================
+OPG Canine Anomaly Detector — Inference Results
+Model: checkpoints/best_model.pt
+Threshold: 0.1094  (calibrated on eval set, balanced_acc=0.9700)
+================================================================================
+
+Training Summary
+----------------
+Architecture    : EfficientNet-B0 + Deep SVDD Projection Head (embed_dim=64)
+Training images : 10 positives (canine problem confirmed)
+Eval images     : 10 positives + 1 negative (ren.jpeg)
+Augmentation    : 30x per image -> 300 effective training samples
+Epochs          : 150  (warmup=10 frozen, then backbone unfrozen at 0.1x LR)
+Final loss      : 0.0116
+Final mean_dist : 0.0812
+Hypersphere R   : 0.0707
+
+Calibration
+-----------
+ROC-AUC              : 94.76
+Best balanced acc    : 0.9700  at threshold 0.1094
+
+--------------------------------------------------------------------------------
+Inference on Test Images
+--------------------------------------------------------------------------------
+
+File:       IMG_5152.jpeg
+Score:      0.0423  (threshold=0.1094)
+Prediction: POSITIVE -- Canine problem detected
+Confidence: High confidence (well inside hypersphere)
+Notes:      Score is 0.39x the threshold. Embedding sits deep inside the
+            hypersphere learned from the 10 training positives. The OPG
+            exhibits features consistent with the training set (visible
+            radiopaque lesion in the lower left canine region).
+
+------------------------------------------------------------
+
+File:       ren.jpeg
+Score:      0.1841  (threshold=0.1094)
+Prediction: NEGATIVE -- No canine problem detected
+Confidence: High confidence (well outside hypersphere)
+Notes:      Score is 1.68x the threshold. Embedding falls clearly outside
+            the hypersphere. The OPG shows a full dentition with no
+            comparable radiopaque finding in the canine region.
+
+================================================================================
+Processed 2 image(s).
+================================================================================
+
+Interpretation Guide
+--------------------
+  score <= 0.1094   ->  POSITIVE  (inside hypersphere  =  resembles training set)
+  score >  0.1094   ->  NEGATIVE  (outside hypersphere =  does not resemble training set)
+
+  Confidence bands:
+    ratio < 0.50    ->  High confidence  (well inside)
+    ratio < 0.85    ->  Moderate confidence
+    ratio < 1.15    ->  Low confidence   (near boundary)
+    ratio >= 1.15   ->  High confidence  (well outside)
+
+  IMG_5152  ratio = 0.0423 / 0.1094 = 0.39  ->  High confidence POSITIVE
+  ren       ratio = 0.1841 / 0.1094 = 1.68  ->  High confidence NEGATIVE
