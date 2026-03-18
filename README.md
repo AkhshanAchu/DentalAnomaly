@@ -153,6 +153,11 @@ Example output:
     Confidence: High confidence (well inside hypersphere)
 
 ---
+<table> <tr> <th>Positive (Canine Problem)</th> <th>Negative (Normal)</th> </tr> <tr> <td align="center"> <br/>![IMG_5152](https://github.com/user-attachments/assets/1389222f-5510-4752-bf2c-52105f67723e)
+ <b>IMG_5152.jpeg</b><br/> Score: 0.0821<br/> Prediction: POSITIVE </td> <td align="center"> <br/>![ren](https://github.com/user-attachments/assets/b9c5de92-c612-41c4-94eb-64e5830e0380)
+ <b>ren.jpeg</b><br/> Score: 0.1345<br/> Prediction: NEGATIVE </td> </tr> </table>
+
+---
 
 ## Design Decisions for Low-Data Regimes
 
