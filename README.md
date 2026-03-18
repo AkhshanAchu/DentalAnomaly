@@ -153,10 +153,7 @@ Example output:
     Confidence: High confidence (well inside hypersphere)
 
 ---
-<table> <tr> <th>Positive (Canine Problem)</th> <th>Negative (Normal)</th> </tr> <tr> <td align="center"> <br/>![IMG_5152](https://github.com/user-attachments/assets/1389222f-5510-4752-bf2c-52105f67723e)
- <b>IMG_5152.jpeg</b><br/> Score: 0.0821<br/> Prediction: POSITIVE </td> <td align="center"> <br/>![ren](https://github.com/user-attachments/assets/b9c5de92-c612-41c4-94eb-64e5830e0380)
- <b>ren.jpeg</b><br/> Score: 0.1345<br/> Prediction: NEGATIVE </td> </tr> </table>
-
+<table> <tr> <th style="text-align:center; font-size:16px;">Positive (Canine Problem)</th> <th style="text-align:center; font-size:16px;">Negative (Normal)</th> </tr> <tr> <td align="center" style="padding: 10px;"> <img src="https://github.com/user-attachments/assets/1389222f-5510-4752-bf2c-52105f67723e" width="320"/><br/><br/> <b>IMG_5152.jpeg</b><br/> <code>Score: 0.0821</code><br/> <span style="color:green;"><b>POSITIVE</b></span><br/> <sub>Well inside hypersphere</sub> </td> <td align="center" style="padding: 10px;"> <img src="https://github.com/user-attachments/assets/b9c5de92-c612-41c4-94eb-64e5830e0380" width="320"/><br/><br/> <b>ren.jpeg</b><br/> <code>Score: 0.1345</code><br/> <span style="color:red;"><b>NEGATIVE</b></span><br/> <sub>Outside hypersphere</sub> </td> </tr> </table> <p align="center"> <i>Figure: Deep SVDD-based classification of OPG images. Lower scores indicate embeddings closer to the learned hypersphere center.</i> </p>
 ---
 
 ## Design Decisions for Low-Data Regimes
